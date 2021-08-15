@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      width: 100%;
+      border: 1px solid #999;
+      text-align: left;
+      border-collapse: collapse;
+      margin: 0 0 1em 0;
+      caption-side: top;
+    }
+
+    caption,
+    td,
+    th {
+      padding: 0.3em;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid #999;
+      width: 25%;
+    }
+
+    caption {
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .odd th,
+    .odd td {
+      background: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <p style="text-align: center; font-weight: 100;">
+    <h3>
+      <%= titulo %>
+    </h3>
+  </p>
+  <p style="text-align: center">
+    <table style="border: 1px solid black; text-align: center;">
+      <tbody>
+        <tr  class="odd">
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
+          <th>Numero Documento</th>
+        </tr>
+        <% listaPersonas.forEach((estudiante) =>{ %>
+          <tr>
+            <td>
+              <%= estudiante.id%>
+            </td>
+            <td>
+              <%= estudiante.nombres%>
+            </td>
+            <td>
+              <%= estudiante.apellidoPaterno%>
+            </td>
+            <td>
+              <%= estudiante.apellidoMaterno%>
+            </td>
+            <td>
+              <%= estudiante.numeroDocumento%>
+            </td>
+          </tr>
+          <%});%>
+      </tbody>
+    </table>
+  </p>
+
+</body>
+
+</html>
